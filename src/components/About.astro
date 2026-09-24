@@ -1,0 +1,55 @@
+---
+import { siteConfig } from "../config";
+---
+
+<section id="about" class="section-shell bg-white">
+  <div class="mx-auto max-w-7xl px-6 py-20 sm:px-10 sm:py-24 lg:px-12 lg:py-32">
+    <div class="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+      <div>
+        <p class="section-kicker">01 / About</p>
+        <h2 class="section-title mt-4">Make the physical world legible.</h2>
+        <p class="mt-6 max-w-md text-base leading-7 text-slate-500">
+          I work where machines, networks, and software meet.
+        </p>
+      </div>
+
+      <div>
+        <p class="max-w-3xl text-xl leading-9 text-slate-700 sm:text-2xl sm:leading-10">
+          {siteConfig.aboutMe}
+        </p>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-teal-100 text-teal-700">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19V5M4 19h16" /><path d="m7 15 3-4 3 2 5-6" /><circle cx="18" cy="7" r="1" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900">Signal to insight</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">From raw tags and sensor readings to dashboards, alerts, and decisions people can act on.</p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-100 text-cyan-700">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3 4 7v5c0 4.7 3.4 8.5 8 9 4.6-.5 8-4.3 8-9V7l-8-4Z" /><path d="m9 12 2 2 4-4" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-slate-900">Built to operate</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Secure defaults, validation, reconnect behavior, and documentation are part of the product.</p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Toolkit</h3>
+          <div class="mt-5 flex flex-wrap gap-2.5">
+            {siteConfig.skills.map((skill) => (
+              <span class="rounded-full border border-slate-200 bg-white px-3.5 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:border-teal-300 hover:text-teal-700">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

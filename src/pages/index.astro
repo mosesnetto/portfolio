@@ -1,0 +1,66 @@
+---
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Services from "../components/Services.astro";
+import Projects from "../components/Projects.astro";
+import Experience from "../components/Experience.astro";
+import Education from "../components/Education.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import { siteConfig } from "../config";
+import "../styles/global.css";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  jobTitle: siteConfig.title,
+  description: siteConfig.description,
+  url: "https://mosesnetto.github.io/portfolio/",
+  image: "https://mosesnetto.github.io/portfolio/moses-avatar.jpg",
+  email: siteConfig.social.email,
+  sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
+  knowsAbout: siteConfig.skills,
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="description" content={siteConfig.description} />
+    <meta name="author" content={siteConfig.name} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="canonical" href="https://mosesnetto.github.io/portfolio/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${siteConfig.name} — ${siteConfig.title}`} />
+    <meta property="og:description" content={siteConfig.description} />
+    <meta property="og:url" content="https://mosesnetto.github.io/portfolio/" />
+    <meta property="og:image" content="https://mosesnetto.github.io/portfolio/moses-avatar.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={`${siteConfig.name} — ${siteConfig.title}`} />
+    <meta name="twitter:description" content={siteConfig.description} />
+    <title>{siteConfig.name} — {siteConfig.title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <Hero />
+      <About />
+      <Services />
+      <Projects />
+      <Experience />
+      <Education />
+      <Contact />
+    </main>
+    <Footer />
+  </body>
+</html>

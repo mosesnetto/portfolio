@@ -1,0 +1,102 @@
+---
+import { siteConfig } from "../config";
+
+const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
+const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
+const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+---
+
+<header id="header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+  <nav class="mx-auto max-w-7xl px-5 py-4 sm:px-8 lg:px-12" aria-label="Primary navigation">
+    <div class="nav-shell flex items-center justify-between rounded-2xl border border-transparent px-3 py-2 transition-all duration-300 sm:px-4">
+      <a href="#hero" class="flex items-center gap-2.5" aria-label={`${siteConfig.name} home`}>
+        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 text-sm font-black text-white shadow-lg shadow-slate-900/10">MN</span>
+        <span class="hidden text-sm font-bold tracking-tight text-slate-900 sm:block">{siteConfig.name}</span>
+      </a>
+
+      <ul class="hidden items-center gap-1 md:flex">
+        <li><a class="nav-link" href="#about">About</a></li>
+        {hasProjects && <li><a class="nav-link" href="#projects">Work</a></li>}
+        {hasExperience && <li><a class="nav-link" href="#experience">Experience</a></li>}
+        {hasEducation && <li><a class="nav-link" href="#education">Education</a></li>}
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+
+      <a href={`mailto:${siteConfig.social.email}`} class="hidden rounded-xl bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-700 sm:inline-flex">
+        Let's talk <span class="ml-1" aria-hidden="true">↗</span>
+      </a>
+
+      <details class="relative md:hidden">
+        <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 marker:hidden" aria-label="Open navigation menu">
+          <span class="sr-only">Menu</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </summary>
+        <div class="absolute right-0 mt-3 w-52 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
+          <a class="mobile-link" href="#about">About</a>
+          {hasProjects && <a class="mobile-link" href="#projects">Work</a>}
+          {hasExperience && <a class="mobile-link" href="#experience">Experience</a>}
+          {hasEducation && <a class="mobile-link" href="#education">Education</a>}
+          <a class="mobile-link" href="#contact">Contact</a>
+        </div>
+      </details>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const header = document.getElementById("header");
+  const updateHeader = () => {
+    header?.classList.toggle("is-scrolled", window.scrollY > 24);
+  };
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+</script>
+
+<style>
+  .nav-shell {
+    background: rgba(248, 250, 252, 0.78);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0);
+    backdrop-filter: blur(14px);
+  }
+
+  #header.is-scrolled .nav-shell {
+    border-color: rgba(226, 232, 240, 0.95);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  }
+
+  .nav-link {
+    display: inline-flex;
+    border-radius: 0.75rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #475569;
+    transition: color 160ms ease, background-color 160ms ease;
+  }
+
+  .nav-link:hover {
+    color: #0f766e;
+    background: #f0fdfa;
+  }
+
+  .mobile-link {
+    display: block;
+    border-radius: 0.75rem;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #334155;
+  }
+
+  .mobile-link:hover {
+    color: #0f766e;
+    background: #f0fdfa;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

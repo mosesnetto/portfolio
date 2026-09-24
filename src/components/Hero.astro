@@ -1,0 +1,160 @@
+---
+import { siteConfig } from "../config";
+---
+
+<div
+  id="hero"
+  class="hero-shell relative isolate overflow-hidden"
+  style={`--accent-color: ${siteConfig.accentColor}`}
+>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+
+  <div class="relative z-10 mx-auto flex min-h-[calc(100vh-2rem)] max-w-7xl items-center px-6 py-16 sm:px-10 lg:px-12">
+    <div class="grid w-full items-center gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
+      <div class="max-w-3xl animate-fade-in">
+        <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-teal-200/80 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-teal-800 shadow-sm backdrop-blur">
+          <span class="relative flex h-2 w-2">
+            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-400 opacity-75"></span>
+            <span class="relative inline-flex h-2 w-2 rounded-full bg-teal-600"></span>
+          </span>
+          {siteConfig.hero.availability}
+        </div>
+
+        <p class="mb-5 font-mono text-sm font-semibold uppercase tracking-[0.22em] text-teal-700 sm:text-base">
+          {siteConfig.hero.eyebrow}
+        </p>
+        <h1 class="max-w-4xl text-5xl font-black leading-[0.98] tracking-[-0.055em] text-slate-950 sm:text-6xl lg:text-8xl">
+          {siteConfig.hero.headline}
+        </h1>
+        <p class="mt-8 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl sm:leading-9">
+          {siteConfig.hero.summary}
+        </p>
+
+        <div class="mt-9 flex flex-wrap gap-3">
+          <a href="#projects" class="button button-primary">
+            Explore selected work
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a href={`mailto:${siteConfig.social.email}`} class="button button-secondary">
+            Start a conversation
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-500">
+          <span class="inline-flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-teal-500"></span>
+            {siteConfig.hero.location}
+          </span>
+          <span>Embedded · Edge · Cloud</span>
+        </div>
+      </div>
+
+      <div class="relative mx-auto w-full max-w-md lg:max-w-none animate-fade-in animation-delay-300">
+        <div class="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-teal-200/70 via-cyan-100/40 to-transparent blur-2xl" aria-hidden="true"></div>
+        <div class="relative overflow-hidden rounded-[2rem] border border-white/80 bg-white/80 p-3 shadow-2xl shadow-slate-900/10 backdrop-blur">
+          <div class="relative aspect-[4/5] overflow-hidden rounded-[1.4rem] bg-slate-900">
+            <img
+              src={siteConfig.avatar}
+              alt={`${siteConfig.name} profile portrait`}
+              class="h-full w-full object-cover object-top"
+              width="460"
+              height="575"
+            />
+            <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950/85 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 text-white">
+              <p class="font-mono text-xs uppercase tracking-[0.2em] text-teal-200">Profile</p>
+              <p class="mt-1 text-2xl font-bold tracking-tight">{siteConfig.name}</p>
+              <p class="mt-1 text-sm text-slate-200">Building useful systems from the edge up.</p>
+            </div>
+          </div>
+        </div>
+        <div class="absolute -bottom-5 -left-5 hidden rounded-2xl border border-white/80 bg-white/90 px-4 py-3 shadow-xl shadow-slate-900/10 backdrop-blur sm:block">
+          <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-slate-400">Currently</p>
+          <p class="mt-1 text-sm font-semibold text-slate-800">Building at Hanoch Automations</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative z-10 mx-auto max-w-7xl px-6 pb-10 sm:px-10 lg:px-12">
+    <div class="grid overflow-hidden rounded-2xl border border-slate-200/80 bg-white/75 shadow-sm backdrop-blur sm:grid-cols-3">
+      {siteConfig.hero.highlights.map((highlight, index) => (
+        <div class={`flex items-center gap-3 px-5 py-4 text-sm text-slate-700 ${index > 0 ? "border-t border-slate-200/80 sm:border-l sm:border-t-0" : ""}`}>
+          <span class="font-mono text-xs font-bold text-teal-600">0{index + 1}</span>
+          <span>{highlight}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero-shell {
+    background:
+      radial-gradient(circle at 12% 12%, rgba(20, 184, 166, 0.12), transparent 28%),
+      linear-gradient(135deg, #f8fafc 0%, #ecfeff 48%, #f8fafc 100%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.4;
+    background-image:
+      linear-gradient(rgba(15, 118, 110, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15, 118, 110, 0.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, black, transparent 78%);
+  }
+
+  .hero-glow {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(1px);
+  }
+
+  .hero-glow-one {
+    top: 12%;
+    right: -8rem;
+    width: 28rem;
+    height: 28rem;
+    background: rgba(103, 232, 249, 0.2);
+  }
+
+  .hero-glow-two {
+    bottom: -12rem;
+    left: 28%;
+    width: 34rem;
+    height: 34rem;
+    background: rgba(153, 246, 228, 0.18);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in {
+      animation: none;
+      opacity: 1;
+    }
+  }
+</style>
