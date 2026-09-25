@@ -73,6 +73,9 @@ export const siteConfig = {
       skills: ["Python", "OCR", "Flask", "Data validation", "Analytics"],
       featured: true,
       outcome: "124-field validated extractor",
+      image: "/portfolio/projects/meridian-preview.svg",
+      imageAlt:
+        "MERIDIAN Engine Intelligence dashboard preview showing OCR, validation, analytics, and voice briefing",
     },
     {
       name: "Modbus AWS Logger",
@@ -82,6 +85,9 @@ export const siteConfig = {
       skills: ["Python", "Modbus TCP", "AWS IoT", "MQTT/TLS", "Raspberry Pi"],
       featured: true,
       outcome: "PLC data → cloud telemetry",
+      image: "/portfolio/projects/modbus-aws-preview.svg",
+      imageAlt:
+        "Modbus AWS Logger architecture preview showing PLC, Raspberry Pi edge gateway, MQTT, and AWS IoT Core",
     },
     {
       name: "MCC Machine Shift Monitor",
@@ -91,6 +97,9 @@ export const siteConfig = {
       skills: ["Python", "Raspberry Pi 5", "Telegram", "4G / A7670E", "TTS"],
       featured: true,
       outcome: "From breakdown to escalation",
+      image: "/portfolio/projects/machine-monitor-preview.svg",
+      imageAlt:
+        "MCC Machine Shift Monitor preview showing machine status, shift timeline, Telegram alert, and 4G escalation",
     },
     {
       name: "Career Guidance Chatbot",

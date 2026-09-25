@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">MERIDIAN Engine Intelligence dashboard preview</title>
+  <desc id="desc">A dark dashboard preview showing scanned report intake, OCR, validation, analytics, and an offline voice briefing.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071525"/>
+      <stop offset="0.55" stop-color="#0b1d31"/>
+      <stop offset="1" stop-color="#101b35"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#132b43"/>
+      <stop offset="1" stop-color="#0c1d30"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#7dd3fc" stroke-opacity=".06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="720" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="720" rx="28" fill="url(#grid)"/>
+  <circle cx="1020" cy="80" r="170" fill="#14b8a6" opacity=".08" filter="url(#glow)"/>
+  <circle cx="120" cy="670" r="150" fill="#38bdf8" opacity=".06" filter="url(#glow)"/>
+
+  <rect x="28" y="26" width="1144" height="668" rx="20" fill="#081a2b" stroke="#23435a"/>
+  <rect x="28" y="26" width="1144" height="66" rx="20" fill="#0d2235"/>
+  <path d="M28 72h1144" stroke="#23435a"/>
+  <rect x="52" y="44" width="30" height="30" rx="9" fill="url(#teal)"/>
+  <path d="M61 52h12v14H61z" fill="#062033" opacity=".8"/>
+  <text x="96" y="57" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="1.4">MERIDIAN</text>
+  <text x="96" y="75" fill="#7dd3fc" font-family="Arial, sans-serif" font-size="10" letter-spacing="2.4">ENGINE INTELLIGENCE</text>
+  <rect x="935" y="43" width="110" height="27" rx="13.5" fill="#123b45" stroke="#2dd4bf" stroke-opacity=".55"/>
+  <circle cx="953" cy="56.5" r="4" fill="#5eead4"/>
+  <text x="965" y="60" fill="#a7f3d0" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1">LOCAL / OFFLINE</text>
+  <text x="1060" y="61" fill="#64748b" font-family="Arial, sans-serif" font-size="10" text-anchor="end">SYSTEM PREVIEW</text>
+
+  <rect x="52" y="112" width="280" height="552" rx="16" fill="url(#panel)" stroke="#23435a"/>
+  <text x="76" y="145" fill="#7dd3fc" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.8">REPORT INTAKE</text>
+  <rect x="76" y="166" width="232" height="126" rx="12" fill="#0a1a2b" stroke="#2a5366"/>
+  <rect x="91" y="184" width="40" height="50" rx="5" fill="#e2e8f0"/>
+  <path d="M99 198h24M99 207h24M99 216h17" stroke="#64748b" stroke-width="2" stroke-linecap="round"/>
+  <text x="144" y="193" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12" font-weight="700">ME_PERFORMANCE</text>
+  <text x="144" y="210" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="12" font-weight="700">_REPORT_114.pdf</text>
+  <text x="144" y="230" fill="#64748b" font-family="Arial, sans-serif" font-size="10">2 Reading pages detected</text>
+  <rect x="76" y="316" width="232" height="1" fill="#23435a"/>
+  <text x="76" y="349" fill="#64748b" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2">PIPELINE STATUS</text>
+  <g font-family="Arial, sans-serif" font-size="11">
+    <circle cx="82" cy="378" r="5" fill="#5eead4"/><text x="98" y="382" fill="#cbd5e1">Page detection</text><text x="278" y="382" fill="#5eead4" text-anchor="end">DONE</text>
+    <circle cx="82" cy="412" r="5" fill="#5eead4"/><text x="98" y="416" fill="#cbd5e1">14-region OCR</text><text x="278" y="416" fill="#5eead4" text-anchor="end">DONE</text>
+    <circle cx="82" cy="446" r="5" fill="#38bdf8"/><text x="98" y="450" fill="#cbd5e1">Fidelity validation</text><text x="278" y="450" fill="#38bdf8" text-anchor="end">LIVE</text>
+    <circle cx="82" cy="480" r="5" fill="#64748b"/><text x="98" y="484" fill="#cbd5e1">Voice briefing</text><text x="278" y="484" fill="#64748b" text-anchor="end">READY</text>
+  </g>
+  <rect x="76" y="530" width="232" height="92" rx="12" fill="#0a1a2b" stroke="#23435a"/>
+  <text x="92" y="555" fill="#64748b" font-family="Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="1.4">AUDITABLE OUTPUT</text>
+  <text x="92" y="583" fill="#5eead4" font-family="Consolas, monospace" font-size="12">report.json</text>
+  <text x="92" y="602" fill="#7dd3fc" font-family="Consolas, monospace" font-size="12">validation.json</text>
+  <text x="238" y="602" fill="#475569" font-family="Consolas, monospace" font-size="10">+ audit</text>
+
+  <text x="362" y="132" fill="#7dd3fc" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.8">READING SECTION / REPORT 114</text>
+  <text x="362" y="160" fill="#e0f2fe" font-family="Arial, sans-serif" font-size="23" font-weight="700">Measurement intelligence</text>
+  <g>
+    <rect x="362" y="184" width="220" height="82" rx="12" fill="#102a40" stroke="#2a5366"/>
+    <text x="380" y="208" fill="#7dd3fc" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2">REGISTERED FIELDS</text>
+    <text x="380" y="245" fill="#f0fdfa" font-family="Arial, sans-serif" font-size="31" font-weight="800">124</text>
+    <text x="555" y="244" fill="#5eead4" font-family="Arial, sans-serif" font-size="11">audited</text>
+    <rect x="600" y="184" width="220" height="82" rx="12" fill="#102a40" stroke="#2a5366"/>
+    <text x="618" y="208" fill="#7dd3fc" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2">OCR CONFIDENCE</text>
+    <text x="618" y="245" fill="#f0fdfa" font-family="Arial, sans-serif" font-size="31" font-weight="800">98.7%</text>
+    <text x="790" y="244" fill="#38bdf8" font-family="Arial, sans-serif" font-size="11">median</text>
+    <rect x="838" y="184" width="220" height="82" rx="12" fill="#102a40" stroke="#2a5366"/>
+    <text x="856" y="208" fill="#7dd3fc" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.2">REGIONS CROPPED</text>
+    <text x="856" y="245" fill="#f0fdfa" font-family="Arial, sans-serif" font-size="31" font-weight="800">14</text>
+    <text x="925" y="244" fill="#fbbf24" font-family="Arial, sans-serif" font-size="11">calibrated</text>
+  </g>
+
+  <text x="362" y="306" fill="#7dd3fc" font-family="Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.8">PROCESSING PIPELINE</text>
+  <g font-family="Arial, sans-serif" font-size="11" font-weight="700">
+    <rect x="362" y="326" width="154" height="54" rx="10" fill="#123b45" stroke="#2dd4bf"/><text x="384" y="358" fill="#ccfbf1">OCR EXTRACT</text>
+    <path d="M522 353h28" stroke="#5eead4" stroke-width="2"/><path d="m544 347 7 6-7 6" fill="none" stroke="#5eead4" stroke-width="2"/>
+    <rect x="570" y="326" width="154" height="54" rx="10" fill="#123b45" stroke="#2dd4bf"/><text x="592" y="358" fill="#ccfbf1">VALIDATE</text>
+    <path d="M730 353h28" stroke="#5eead4" stroke-width="2"/><path d="m752 347 7 6-7 6" fill="none" stroke="#5eead4" stroke-width="2"/>
+    <rect x="778" y="326" width="154" height="54" rx="10" fill="#123b45" stroke="#2dd4bf"/><text x="800" y="358" fill="#ccfbf1">ANALYZE</text>
+    <path d="M938 353h28" stroke="#5eead4" stroke-width="2"/><path d="m960 347 7 6-7 6" fill="none" stroke="#5eead4" stroke-width="2"/>
+    <rect x="986" y="326" width="72" height="54" rx="10" fill="#4a2e16" stroke="#f59e0b"/><text x="1000" y="358" fill="#fde68a">VOICE</text>
+  </g>
+
+  <rect x="362" y="410" width="696" height="254" rx="16" fill="url(#panel)" stroke="#23435a"/>
+  <text x="386" y="443" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="12" font-weight="700">TREND VIEW</text>
+  <text x="386" y="463" fill="#64748b" font-family="Arial, sans-serif" font-size="10">Cylinder pressure / compared across reports</text>
+  <g stroke="#23435a" stroke-width="1">
+    <path d="M386 493h640M386 532h640M386 571h640M386 610h640"/>
+    <path d="M386 480v154M514 480v154M642 480v154M770 480v154M898 480v154M1026 480v154" stroke-opacity=".45"/>
+  </g>
+  <path d="M386 603 C430 590 447 570 480 579 S534 537 567 551 S619 510 652 527 S703 493 739 508 S791 466 826 493 S876 452 912 469 S972 431 1026 447" fill="none" stroke="url(#teal)" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M386 603 C430 590 447 570 480 579 S534 537 567 551 S619 510 652 527 S703 493 739 508 S791 466 826 493 S876 452 912 469 S972 431 1026 447 L1026 634 L386 634Z" fill="url(#teal)" opacity=".08"/>
+  <circle cx="1026" cy="447" r="6" fill="#5eead4"/><text x="1010" y="426" fill="#99f6e4" font-family="Arial, sans-serif" font-size="10" text-anchor="end">LATEST</text>
+  <g fill="#64748b" font-family="Arial, sans-serif" font-size="9" text-anchor="middle"><text x="386" y="653">Q1</text><text x="546" y="653">Q2</text><text x="706" y="653">Q3</text><text x="866" y="653">Q4</text><text x="1026" y="653">NOW</text></g>
+  <rect x="874" y="586" width="154" height="30" rx="8" fill="#0a1a2b" stroke="#2a5366"/>
+  <circle cx="891" cy="601" r="4" fill="#fbbf24"/><text x="904" y="605" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="10">threshold trigger armed</text>
+</svg>
