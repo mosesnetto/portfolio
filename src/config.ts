@@ -4,7 +4,7 @@ export const siteConfig = {
   description:
     "Moses Netto builds reliable edge-to-cloud systems for manufacturing, marine, and process-control environments.",
   accentColor: "#0f766e",
-  avatar: "/moses-avatar.jpg",
+  avatar: "/portfolio/moses-avatar.jpg",
   social: {
     email: "mosesnetto@gmail.com",
     linkedin:
