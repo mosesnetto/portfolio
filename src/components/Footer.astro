@@ -11,6 +11,9 @@ import { siteConfig } from "../config";
     <div class="flex flex-wrap items-center gap-5 text-sm font-semibold text-slate-600">
       <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" class="transition hover:text-teal-700">GitHub</a>
       <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" class="transition hover:text-teal-700">LinkedIn</a>
+      {siteConfig.social.twitter && (
+        <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" class="transition hover:text-teal-700">X</a>
+      )}
       <a href={`mailto:${siteConfig.social.email}`} class="transition hover:text-teal-700">Email</a>
     </div>
     <p class="text-xs text-slate-400">© {new Date().getFullYear()} {siteConfig.name}</p>

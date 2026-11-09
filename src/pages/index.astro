@@ -6,6 +6,8 @@ import Services from "../components/Services.astro";
 import Projects from "../components/Projects.astro";
 import Experience from "../components/Experience.astro";
 import Education from "../components/Education.astro";
+import Writing from "../components/Writing.astro";
+import Testimonials from "../components/Testimonials.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 import { siteConfig } from "../config";
@@ -20,7 +22,7 @@ const structuredData = {
   url: "https://mosesnetto.github.io/portfolio/",
   image: "https://mosesnetto.github.io/portfolio/moses-avatar.jpg",
   email: siteConfig.social.email,
-  sameAs: [siteConfig.social.github, siteConfig.social.linkedin],
+  sameAs: [siteConfig.social.github, siteConfig.social.linkedin, siteConfig.social.twitter],
   knowsAbout: siteConfig.skills,
 };
 ---
@@ -57,6 +59,8 @@ const structuredData = {
       <About />
       <Services />
       <Projects />
+      <Writing />
+      <Testimonials />
       <Experience />
       <Education />
       <Contact />
