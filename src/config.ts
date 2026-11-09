@@ -225,7 +225,7 @@ export const siteConfig = {
     {
       title: "Why I Use systemd for Edge Services (Not Docker)",
       date: "2025-08-05",
-      link: "https://mosesnetto.github.io/writing/systemd-vs-docker-edge",
+      link: "https://mosesnetto.github.io/portfolio/writing/systemd-vs-docker-edge.md",
       tags: ["Linux", "Edge", "Operations"],
     },
   ],
