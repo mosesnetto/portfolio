@@ -2,20 +2,20 @@
 import { siteConfig } from "../config";
 ---
 
-<footer class="border-t border-slate-200 bg-white">
+<footer class="border-t border-[var(--color-border)]" style="background: var(--color-bg);">
   <div class="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-10 sm:px-10 md:flex-row md:items-center md:justify-between lg:px-12">
-    <div>
-      <p class="text-lg font-black tracking-tight text-slate-950">{siteConfig.name}</p>
-      <p class="mt-1 text-sm text-slate-500">Embedded systems · Industrial IoT · Edge-to-cloud</p>
+    <div class="animate-fade-in-up">
+      <p class="text-lg font-black tracking-tight text-[var(--color-fg)]">{siteConfig.name}</p>
+      <p class="mt-1 text-sm text-[var(--color-fg-muted)]">Embedded systems · Industrial IoT · Edge-to-cloud</p>
     </div>
-    <div class="flex flex-wrap items-center gap-5 text-sm font-semibold text-slate-600">
-      <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" class="transition hover:text-teal-700">GitHub</a>
-      <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" class="transition hover:text-teal-700">LinkedIn</a>
+    <div class="flex flex-wrap items-center gap-5 text-sm font-semibold text-[var(--color-fg-muted)] animate-fade-in-up animation-delay-100">
+      <a href={siteConfig.social.github} target="_blank" rel="noopener noreferrer" class="transition hover:text-[var(--color-accent)]">GitHub</a>
+      <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" class="transition hover:text-[var(--color-accent)]">LinkedIn</a>
       {siteConfig.social.twitter && (
-        <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" class="transition hover:text-teal-700">X</a>
+        <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" class="transition hover:text-[var(--color-accent)]">X</a>
       )}
-      <a href={`mailto:${siteConfig.social.email}`} class="transition hover:text-teal-700">Email</a>
+      <a href={`mailto:${siteConfig.social.email}`} class="transition hover:text-[var(--color-accent)]">Email</a>
     </div>
-    <p class="text-xs text-slate-400">© {new Date().getFullYear()} {siteConfig.name}</p>
+    <p class="text-xs text-[var(--color-fg-subtle)] animate-fade-in-up animation-delay-200">© {new Date().getFullYear()} {siteConfig.name}</p>
   </div>
 </footer>

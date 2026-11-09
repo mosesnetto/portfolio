@@ -10,10 +10,10 @@ const hasTestimonials = siteConfig.testimonials && siteConfig.testimonials.lengt
 
 <header id="header" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
   <nav class="mx-auto max-w-7xl px-5 py-4 sm:px-8 lg:px-12" aria-label="Primary navigation">
-    <div class="nav-shell flex items-center justify-between rounded-2xl border border-transparent px-3 py-2 transition-all duration-300 sm:px-4">
+    <div class="nav-shell flex items-center justify-between rounded-2xl px-3 py-2 transition-all duration-300 sm:px-4">
       <a href="#hero" class="flex items-center gap-2.5" aria-label={`${siteConfig.name} home`}>
-        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 text-sm font-black text-white shadow-lg shadow-slate-900/10">MN</span>
-        <span class="hidden text-sm font-bold tracking-tight text-slate-900 sm:block">{siteConfig.name}</span>
+        <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--color-fg)] text-sm font-black text-[var(--color-bg-elevated)] shadow-lg shadow-[var(--color-card-shadow)]">MN</span>
+        <span class="hidden text-sm font-bold tracking-tight text-[var(--color-fg)] sm:block">{siteConfig.name}</span>
       </a>
 
       <ul class="hidden items-center gap-1 md:flex">
@@ -22,87 +22,149 @@ const hasTestimonials = siteConfig.testimonials && siteConfig.testimonials.lengt
         {hasWriting && <li><a class="nav-link" href="#writing">Writing</a></li>}
         {hasTestimonials && <li><a class="nav-link" href="#testimonials">Testimonials</a></li>}
         {hasExperience && <li><a class="nav-link" href="#experience">Experience</a></li>}
-        {hasEducation && <li><a class="nav-link" href="#education">Education</a></li>}
+        {hasEducation && <li><a class="nav-link" href="#education">Foundation</a></li>}
         <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
 
-      <a href={`mailto:${siteConfig.social.email}`} class="hidden rounded-xl bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-teal-700 sm:inline-flex">
-        Let's talk <span class="ml-1" aria-hidden="true">↗</span>
-      </a>
+      <div class="flex items-center gap-3">
+        <a href={`mailto:${siteConfig.social.email}`} class="hidden rounded-xl bg-[var(--color-fg)] px-4 py-2.5 text-sm font-semibold text-[var(--color-bg-elevated)] transition hover:bg-[var(--color-accent)] sm:inline-flex">
+          Let's talk <span class="ml-1" aria-hidden="true">→</span>
+        </a>
 
-      <details class="relative md:hidden">
-        <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 marker:hidden" aria-label="Open navigation menu">
-          <span class="sr-only">Menu</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </summary>
-        <div class="absolute right-0 mt-3 w-52 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
-          <a class="mobile-link" href="#about">About</a>
-          {hasProjects && <a class="mobile-link" href="#projects">Work</a>}
-          {hasWriting && <a class="mobile-link" href="#writing">Writing</a>}
-          {hasTestimonials && <a class="mobile-link" href="#testimonials">Testimonials</a>}
-          {hasExperience && <a class="mobile-link" href="#experience">Experience</a>}
-          {hasEducation && <a class="mobile-link" href="#education">Education</a>}
-          <a class="mobile-link" href="#contact">Contact</a>
-        </div>
-      </details>
+        <button id="theme-toggle" class="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-[var(--color-fg)] transition hover:bg-[var(--color-bg-muted)]" aria-label="Toggle theme" title="Toggle theme">
+          <svg id="sun-icon" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+          <svg id="moon-icon" class="h-5 w-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+        </button>
+
+        <details class="relative md:hidden">
+          <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-[var(--color-fg)] marker:hidden" aria-label="Open navigation menu">
+            <span class="sr-only">Menu</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </summary>
+          <div class="absolute right-0 mt-3 w-52 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-2 shadow-xl">
+            <a class="mobile-link" href="#about">About</a>
+            {hasProjects && <a class="mobile-link" href="#projects">Work</a>}
+            {hasWriting && <a class="mobile-link" href="#writing">Writing</a>}
+            {hasTestimonials && <a class="mobile-link" href="#testimonials">Testimonials</a>}
+            {hasExperience && <a class="mobile-link" href="#experience">Experience</a>}
+            {hasEducation && <a class="mobile-link" href="#education">Foundation</a>}
+            <a class="mobile-link" href="#contact">Contact</a>
+          </div>
+        </details>
+      </div>
     </div>
   </nav>
 </header>
 
 <script>
+  // Header scroll effect
   const header = document.getElementById("header");
   const updateHeader = () => {
     header?.classList.toggle("is-scrolled", window.scrollY > 24);
   };
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });
+
+  // Theme toggle
+  const themeToggle = document.getElementById("theme-toggle");
+  const sunIcon = document.getElementById("sun-icon");
+  const moonIcon = document.getElementById("moon-icon");
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    if (theme === "dark") {
+      sunIcon?.classList.add("hidden");
+      moonIcon?.classList.remove("hidden");
+    } else {
+      sunIcon?.classList.remove("hidden");
+      moonIcon?.classList.add("hidden");
+    }
+  }
+
+  function getInitialTheme() {
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+
+  applyTheme(getInitialTheme());
+
+  themeToggle?.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") || "light";
+    const next = current === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", next);
+    applyTheme(next);
+  });
+
+  // Listen for system theme changes
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    if (!localStorage.getItem("theme")) {
+      applyTheme(e.matches ? "dark" : "light");
+    }
+  });
 </script>
 
 <style>
   .nav-shell {
-    background: rgba(248, 250, 252, 0.78);
+    background: rgba(250, 251, 252, 0.78);
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0);
     backdrop-filter: blur(14px);
+    border-color: transparent;
+    transition: background-color var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  [data-theme="dark"] .nav-shell {
+    background: rgba(10, 15, 20, 0.78);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0);
   }
 
   #header.is-scrolled .nav-shell {
-    border-color: rgba(226, 232, 240, 0.95);
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    border-color: var(--color-border);
+    background: var(--color-bg-elevated);
+    box-shadow: 0 12px 32px var(--color-card-shadow);
+  }
+
+  [data-theme="dark"] #header.is-scrolled .nav-shell {
+    background: rgba(17, 24, 39, 0.9);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
   }
 
   .nav-link {
     display: inline-flex;
-    border-radius: 0.75rem;
+    border-radius: var(--radius-md);
     padding: 0.6rem 0.8rem;
     font-size: 0.875rem;
     font-weight: 600;
-    color: #475569;
-    transition: color 160ms ease, background-color 160ms ease;
+    color: var(--color-fg-muted);
+    transition: color var(--transition-fast), background-color var(--transition-fast);
   }
 
   .nav-link:hover {
-    color: #0f766e;
-    background: #f0fdfa;
+    color: var(--color-accent);
+    background: var(--color-accent-bg);
   }
 
   .mobile-link {
     display: block;
-    border-radius: 0.75rem;
+    border-radius: var(--radius-md);
     padding: 0.7rem 0.8rem;
     font-size: 0.875rem;
     font-weight: 600;
-    color: #334155;
+    color: var(--color-fg);
   }
 
   .mobile-link:hover {
-    color: #0f766e;
-    background: #f0fdfa;
+    color: var(--color-accent);
+    background: var(--color-accent-bg);
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  #theme-toggle {
+    flex-shrink: 0;
   }
 </style>

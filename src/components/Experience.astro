@@ -4,40 +4,40 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 ---
 
 {hasExperience && (
-  <section id="experience" class="section-shell bg-white">
+  <section id="experience" class="section-shell" style="background: var(--color-bg);">
     <div class="mx-auto max-w-7xl px-6 py-20 sm:px-10 sm:py-24 lg:px-12 lg:py-32">
       <div class="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-        <div>
-          <p class="section-kicker">04 / Experience</p>
+        <div class="animate-fade-in-up">
+          <p class="section-kicker text-[var(--color-accent)]">06 / Experience</p>
           <h2 class="section-title mt-4">Learning by building.</h2>
-          <p class="mt-6 max-w-sm text-base leading-7 text-slate-500">From research and machine intelligence to live industrial systems.</p>
+          <p class="mt-6 max-w-sm text-base leading-7 text-[var(--color-fg-muted)]">From research and machine intelligence to live industrial systems.</p>
         </div>
 
-        <div class="relative">
-          <div class="absolute bottom-0 left-[0.42rem] top-2 w-px bg-slate-200 sm:left-[0.55rem]" aria-hidden="true"></div>
+        <div class="relative animate-fade-in-up animation-delay-100">
+          <div class="absolute bottom-0 left-[0.42rem] top-2 w-px bg-[var(--color-border)] sm:left-[0.55rem]" aria-hidden="true"></div>
           <div class="space-y-10">
             {siteConfig.experience.map((experience, index) => (
-              <article class="relative pl-8 sm:pl-10">
-                <div class="absolute left-0 top-1.5 flex h-3.5 w-3.5 items-center justify-center rounded-full border-4 border-white bg-teal-600 shadow-[0_0_0_1px_#99f6e4] sm:left-0.5" aria-hidden="true"></div>
+              <article class="relative pl-8 sm:pl-10 reveal reveal-delay-{index + 1}">
+                <div class="absolute left-0 top-1.5 flex h-3.5 w-3.5 items-center justify-center rounded-full border-4 border-[var(--color-bg)] bg-[var(--color-accent)] shadow-[0_0_0_1px_var(--color-accent-border)] sm:left-0.5" aria-hidden="true"></div>
                 <div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-start sm:gap-8">
                   <div>
-                    <h3 class="text-xl font-black tracking-tight text-slate-950 sm:text-2xl">{experience.title}</h3>
-                    <p class="mt-1 font-semibold text-teal-700">{experience.company}</p>
+                    <h3 class="text-xl font-bold tracking-tight text-[var(--color-fg)] sm:text-2xl">{experience.title}</h3>
+                    <p class="mt-1 font-semibold text-[var(--color-accent)]">{experience.company}</p>
                   </div>
                   <div class="shrink-0 text-left sm:text-right">
-                    <p class="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">{experience.dateRange}</p>
-                    <p class="mt-1 text-xs text-slate-400">{experience.location}</p>
+                    <p class="font-mono text-xs font-semibold uppercase tracking-[0.12em] text-[var(--color-fg-subtle)]">{experience.dateRange}</p>
+                    <p class="mt-1 text-xs text-[var(--color-fg-subtle)]">{experience.location}</p>
                   </div>
                 </div>
                 <ul class="mt-5 space-y-3">
                   {experience.bullets.map((bullet) => (
-                    <li class="flex gap-3 text-sm leading-6 text-slate-600 sm:text-base sm:leading-7">
-                      <span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-500" aria-hidden="true"></span>
+                    <li class="flex gap-3 text-sm leading-6 text-[var(--color-fg-muted)] sm:text-base sm:leading-7">
+                      <span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-accent)]" aria-hidden="true"></span>
                       <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
-                {index < siteConfig.experience.length - 1 && <div class="mt-10 h-px bg-slate-100 sm:hidden" aria-hidden="true"></div>}
+                {index < siteConfig.experience.length - 1 && <div class="mt-10 h-px bg-[var(--color-border)] sm:hidden" aria-hidden="true"></div>}
               </article>
             ))}
           </div>
@@ -46,3 +46,17 @@ const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
     </div>
   </section>
 )}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  });
+</script>

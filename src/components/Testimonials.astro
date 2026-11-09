@@ -4,23 +4,23 @@ const testimonials = siteConfig.testimonials || [];
 ---
 
 {testimonials.length > 0 && (
-  <section id="testimonials" class="section-shell bg-slate-50">
+  <section id="testimonials" class="section-shell" style="background: var(--color-bg-muted);">
     <div class="mx-auto max-w-7xl px-6 py-20 sm:px-10 sm:py-24 lg:px-12 lg:py-32">
-      <div class="max-w-3xl">
-        <p class="section-kicker">05 / Testimonials</p>
+      <div class="max-w-3xl animate-fade-in-up">
+        <p class="section-kicker text-[var(--color-accent)]">05 / Testimonials</p>
         <h2 class="section-title mt-4">What clients and managers say.</h2>
       </div>
 
       <div class="mt-12 grid gap-6 md:grid-cols-2">
-        {testimonials.map((testimonial) => (
-          <blockquote class="relative rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
-            <div class="absolute top-4 right-4 text-teal-300/30" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1 1 2 2 2 1 0 1 0 1 1v1c0 1 1 2 2 2 1 0 1 0 1 1v1c0 1 1 2 2 2 1 0 1 0 1 1z" /><path d="M15 15c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3" /></svg>
+        {testimonials.map((testimonial, index) => (
+          <blockquote class="card p-7 relative reveal reveal-delay-{index + 1}">
+            <div class="absolute top-4 right-4 text-[var(--color-accent-bg)]" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1 1 2 2 2 1 0 1 0 1 1v1c0 1 1 2 2 2 1 0 1 0 1 1z" /><path d="M15 15c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3" /></svg>
             </div>
-            <p class="text-slate-700 leading-7">"{testimonial.text}"</p>
+            <p class="text-[var(--color-fg)] leading-7">"{testimonial.text}"</p>
             <footer class="mt-6">
-              <p class="font-semibold text-slate-900">{testimonial.name}</p>
-              <p class="text-sm text-slate-500">{testimonial.role}</p>
+              <p class="font-semibold text-[var(--color-fg)]">{testimonial.name}</p>
+              <p class="text-sm text-[var(--color-fg-muted)]">{testimonial.role}</p>
             </footer>
           </blockquote>
         ))}
@@ -28,3 +28,17 @@ const testimonials = siteConfig.testimonials || [];
     </div>
   </section>
 )}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  });
+</script>

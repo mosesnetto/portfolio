@@ -33,22 +33,24 @@ const structuredData = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#0f172a" />
+    <meta name="theme-color" content="#0f766e" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14b8a6" media="(prefers-color-scheme: dark)" />
     <meta name="description" content={siteConfig.description} />
     <meta name="author" content={siteConfig.name} />
     <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="canonical" href="https://mosesnetto.github.io/portfolio/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`${siteConfig.name} — ${siteConfig.title}`} />
     <meta property="og:description" content={siteConfig.description} />
     <meta property="og:url" content="https://mosesnetto.github.io/portfolio/" />
     <meta property="og:image" content="https://mosesnetto.github.io/portfolio/moses-avatar.jpg" />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${siteConfig.name} — ${siteConfig.title}`} />
     <meta name="twitter:description" content={siteConfig.description} />
+    <meta name="twitter:image" content="https://mosesnetto.github.io/portfolio/moses-avatar.jpg" />
     <title>{siteConfig.name} — {siteConfig.title}</title>
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
